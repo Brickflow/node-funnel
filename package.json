@@ -1,0 +1,25 @@
+{
+  "name": "funnel-metrics",
+  "version": "0.0.1",
+  "description": "Simple funnel calculator for series of events",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Brickflow/node-funnel.git"
+  },
+  "keywords": [
+    "funnel",
+    "metrics",
+    "event",
+    "timeseries"
+  ],
+  "author": "Tamas Kokeny <tamas.kokeny.87@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Brickflow/node-funnel/issues"
+  },
+  "homepage": "https://github.com/Brickflow/node-funnel"
+}
