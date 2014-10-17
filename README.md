@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Brickflow/node-funnel.svg)](https://travis-ci.org/Brickflow/node-funnel)
 node-funnel
 ===========
 
