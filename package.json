@@ -22,7 +22,9 @@
     "url": "https://github.com/Brickflow/node-funnel/issues"
   },
   "homepage": "https://github.com/Brickflow/node-funnel",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
   "devDependencies": {
     "tape": "^3.0.1"
   }
