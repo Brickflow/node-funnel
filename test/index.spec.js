@@ -33,24 +33,26 @@ test('calculate funnel empty imputs', function(t) {
   t.end();
 });
 
+function genFunnelDetails(dummy) {
+  return {
+    steps: dummy.steps.map(function(event, index) {
+      return {
+        name: 'event-' + (index + 1),
+        count: event.c,
+        percent: event.p
+      };
+    }),
+    all: {
+      percent: dummy.all
+    }
+  };
+}
+
+
+
 test('calculate funnel', function(t) {
   function assertFunnel(funnelDetails, description) {
     t.deepEqual(funnelDetails, genFunnelDetails(description));
-  }
-
-  function genFunnelDetails(dummy) {
-    return {
-      steps: dummy.steps.map(function(event, index) {
-        return {
-          name: 'event-' + (index + 1),
-          count: event.c,
-          percent: event.p
-        };
-      }),
-      all: {
-        percent: dummy.all
-      }
-    };
   }
 
   function genEvents(eventDetails) {

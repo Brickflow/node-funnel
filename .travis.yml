@@ -4,3 +4,5 @@ node_js:
   - "0.11"
 before_install:
   - npm install -g jshint covert
+script:
+  - npm test && npm run cover
