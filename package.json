@@ -4,7 +4,8 @@
   "description": "Simple funnel calculator for series of events",
   "main": "index.js",
   "scripts": {
-    "test": "node test/index.spec.js"
+    "test": "jshint index.js lib/* test/* && node test/index.spec.js",
+    "cover": "covert test/*"
   },
   "repository": {
     "type": "git",
