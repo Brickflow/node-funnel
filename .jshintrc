@@ -19,6 +19,7 @@
   "maxparams": 3,
   "maxstatements": 4,
   "maxdepth": 2,
+  "maxcomplexity": 3, 
   "maxlen": 80,
   "esnext": true,
   "node": true
