@@ -14,54 +14,72 @@ test('calculate simple steps', function(t) {
   var assertFunnel = getAssertFunnel(t);
 
   (function() {
-    assertFunnel(getFunnelSteps([]), []);
+    var options = {distinctId: 'id', time: 'time'};
+    assertFunnel(getFunnelSteps(options, []), []);
   }());
   
   (function() {
+    var options = {distinctId: 'id', time: 'time'};
     var events = genEvents([
       [{id: 1, time: 1}]
     ]);
-    assertFunnel(getFunnelSteps(events), [
+    assertFunnel(getFunnelSteps(options, events), [
       {c: 1, p: 100}
     ]);
   }());
 
   (function() {
+    var options = {distinctId: 'i', time: 't'};
+    var events = genEvents([
+      [{i: 1, t: 1}],
+      [{i: 1, t: 2}]
+    ]);
+    assertFunnel(getFunnelSteps(options, events), [
+      {c: 1, p: 100},
+      {c: 1, p: 100}
+    ]);
+  }());
+
+  (function() {
+    var options = {distinctId: 'id', time: 'time'};
     var events = genEvents([
       [{id: 1, time: 1}],
       [{id: 1, time: 1}]
     ]);
-    assertFunnel(getFunnelSteps(events), [
+    assertFunnel(getFunnelSteps(options, events), [
       {c: 1, p: 100}, {c:1, p: 100}
     ]);
   }());
 
   (function() {
+    var options = {distinctId: 'id', time: 'time'};
     var events = genEvents([
       [{id: 1, time: 1}, {id: 2, time: 1}],
       [{id: 1, time: 1}]
     ]);
-    assertFunnel(getFunnelSteps(events), [
+    assertFunnel(getFunnelSteps(options, events), [
       {c: 2, p: 100}, {c: 1, p: 50}
     ]);
   }());
 
   (function() {
+    var options = {distinctId: 'id', time: 'time'};
     var events = genEvents([
       [{id: 1, time: 2}],
       [{id: 1, time: 1}]
     ]);
-    assertFunnel(getFunnelSteps(events), [
+    assertFunnel(getFunnelSteps(options, events), [
       {c: 1, p: 100}, {c: 0, p: 0}
     ]);
   }());
 
   (function() {
+    var options = {distinctId: 'id', time: 'time'};
     var events = genEvents([
       [{id: 1, time: 2}, {id: 1, time: 1}],
       [{id: 1, time: 1}]
     ]);
-    assertFunnel(getFunnelSteps(events), [
+    assertFunnel(getFunnelSteps(options, events), [
       {c: 1, p: 100}, {c: 1, p: 100}
     ]);
   }());

@@ -6,28 +6,28 @@ var funnel = require('../');
 
 test('acceptance', function(t) {
   var funnelCalculator = funnel({
-    time: 'time',
-    distinctId: 'id'
+    time: 't',
+    distinctId: 'i'
   });
 
   var funnelDetails = funnelCalculator([{
     name: 'first-event',
     events: [
-      {time: 1, id: 1},
-      {time: 1, id: 2},
-      {time: 1, id: 3},
-      {time: 1, id: 4}
+      {t: 1, i: 1},
+      {t: 1, i: 2},
+      {t: 1, i: 3},
+      {t: 1, i: 4}
     ]
   }, {
     name: 'second-event',
     events: [
-      {time: 2, id: 1},
-      {time: 2, id: 2}
+      {t: 2, i: 1},
+      {t: 2, i: 2}
     ]
   }, {
     name: 'third-event',
     events: [
-      {time: 3, id: 1}
+      {t: 3, i: 1}
     ]
   }]);
 
