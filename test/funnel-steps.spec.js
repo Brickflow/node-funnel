@@ -84,6 +84,32 @@ test('calculate simple steps', function(t) {
     ]);
   }());
 
+  (function() {
+    var options = {distinctId: 'id', time: 'time'};
+    var events = [{
+      name: 'event-1',
+      events: [{i: 1, t: 1}],
+      time: 't',
+      distinctId: 'i'
+    }];
+    assertFunnel(getFunnelSteps(options, events), [
+      {c: 1, p: 100}
+    ]);
+  }());
+
+  (function() {
+    var options = {distinctId: 'id', time: 'time'};
+    var events = [{
+      name: 'event-1',
+      events: [{i: 1, t: 1}],
+      time: 't',
+      distinctId: 'i'
+    }];
+    assertFunnel(getFunnelSteps(options, events), [
+      {c: 1, p: 100}
+    ]);
+  }());
+
   t.end();
 });
 

@@ -27,8 +27,10 @@ test('acceptance', function(t) {
   }, {
     name: 'third-event',
     events: [
-      {t: 3, i: 1}
-    ]
+      {time: 3, id: 1}
+    ],
+    time: 'time',
+    distinctId: 'id'
   }]);
 
   t.deepEqual(funnelDetails, {
