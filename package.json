@@ -15,7 +15,8 @@
     "funnel",
     "metrics",
     "event",
-    "timeseries"
+    "timeseries",
+    "analytics"
   ],
   "author": "Tamas Kokeny <tamas.kokeny.87@gmail.com>",
   "license": "MIT",
