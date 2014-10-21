@@ -9,7 +9,7 @@ test('calculate funnel empty imputs', function(t) {
   var calcFunnel = _.partial(funnelCalculator, {distinctId: 'id'});
   var emptyDeatils = {
     steps: [],
-    all: {percent: 0}
+    all: {percent: 100}
   };
 
   t.deepEqual(calcFunnel(), emptyDeatils);
